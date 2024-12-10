@@ -6,7 +6,7 @@ const cartItems = ref([]);
 // Функция для получения данных из localStorage
 const setCartItems = () => {
   const savedItems = localStorage.getItem("cartItems");
-  if (savedItems.length) {
+  if (!!savedItems) {
     cartItems.value = JSON.parse(savedItems);
   } else {
     cartItems.value = [];
